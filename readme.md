@@ -1,6 +1,6 @@
 # Simple Email Tracking API
 
-This is a simple email tracking API built using Cloudflare Worker. It returns all the necessary data required for tracking emails and utilizes a database to store the data.
+This is a simple email tracking API built using Cloudflare Worker. It returns all the necessary data required for tracking emails.
 
 ## Usage
 
@@ -21,13 +21,27 @@ Replace `<Your_ID>`, `<Email_Title>`, and `<Recipient_Email>` with appropriate v
 
 http://127.0.0.1:8787/api?id=By41Laxoto&title=Update%20about%20our%20product&email=support@example.com
 
+
 ## Data Returned
 
 Upon successful tracking, the API returns the following data:
 
-- `ID`: Unique identifier for the tracked email.
+- `Geolocation`:
+  - `Colo`: Cloudflare colocation center code.
+  - `Country`: Country code.
+  - `City`: City name.
+  - `Continent`: Continent code.
+  - `Latitude`: Latitude coordinates.
+  - `Longitude`: Longitude coordinates.
+  - `PostalCode`: Postal code.
+  - `Region`: Region name.
+  - `RegionCode`: Region code.
+  - `Timezone`: Timezone name.
+
 - `Title`: Title of the email.
 - `Email`: Email address of the recipient.
+- `ID`: Unique identifier for the tracked email.
+- `CurrentTime`: Time when the request was made.
 
 ## Note
 
